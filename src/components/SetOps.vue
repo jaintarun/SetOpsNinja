@@ -157,9 +157,9 @@ export default class SetOps extends Vue {
   }
 
   showDebug(){
-    console.log('caseSensitive:' + this.caseSensitive);
-    console.log('trimLines:' + this.trimLines);
-    console.log('ignoreEmptyLines:' + this.ignoreEmptyLines);
+    // console.log('caseSensitive:' + this.caseSensitive);
+    // console.log('trimLines:' + this.trimLines);
+    // console.log('ignoreEmptyLines:' + this.ignoreEmptyLines);
   }
 
 }
