@@ -1,0 +1,12 @@
+html,
+body,
+#app {
+    height: 100%;
+}
+
+
+
+.fill {
+    min-height: calc(100% - 96px);
+    height: calc(100% - 96px);
+}
