@@ -7,25 +7,18 @@
             <div class="input-group-text">{{ textAreaName }}</div>
           </div>
           <input type="text" class="form-control mr-2" placeholder="Note" />
-          
+
           <BaseButton v-if="withButtons == 'true'" @click="removeDuplicatesEvent">&darr;&nbsp;Remove duplicates</BaseButton>
           <BaseButton v-if="withButtons == 'true'" @click="removeEmptyLinesEvent">&darr;&nbsp;Remove empty lines</BaseButton>
           <BaseButton v-if="withButtons == 'true'" @click="sortEvent">&darr;&nbsp;Sort</BaseButton>
-
         </div>
       </div>
-      <!-- <div class="col-sm-6">
-        <span class="font-weight-normal">Lines</span>
-        <span class="font-weight-light mr-1">1092</span>
-        <span class="font-weight-normal">Duplicates</span>
-        <span class="font-weight-light mr-1">1987</span>
-      </div> -->
     </div>
-    <textarea
-      :value="value"
-      @input="textUpdated"
-      class="setOpsTextArea"
-    ></textarea>
+    <textarea :value="value" @input="textUpdated" class="setOpsTextArea"></textarea>
+    <div>
+      <span>Lines</span>
+      <span class="font-weight-bolder mx-2">1092</span>
+    </div>
   </div>
 </template>
 
@@ -45,15 +38,15 @@ export default class SetopsTextArea extends Vue {
   }
 
   removeDuplicatesEvent() {
-    this.$emit("removeDuplicates", '');
+    this.$emit("removeDuplicates", "");
   }
 
   removeEmptyLinesEvent() {
-    this.$emit("removeEmptyLines", '');
-  }  
+    this.$emit("removeEmptyLines", "");
+  }
 
   sortEvent() {
-    this.$emit("sort", '');
+    this.$emit("sort", "");
   }
 
   textUpdated(event: Event) {
@@ -65,8 +58,9 @@ export default class SetopsTextArea extends Vue {
 <style scoped lang="less">
 .setOpsTextArea {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
   resize: none;
+  line-height: 20px;
 }
 
 .form-control::placeholder {
