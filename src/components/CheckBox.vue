@@ -1,16 +1,8 @@
 <template>
-  <div class="form-check form-group">
-    <label class="form-check-label mr-3 noselect">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="inlineFormCheck"
-        :checked="value"
-        @change="clicked"
-      />
-      {{ label }}
-    </label>
-  </div>
+  <label class="checkbox-inline mr-3 noselect">
+    <input type="checkbox" id="inlineFormCheck" :checked="value" @change="clicked" />
+    {{ label }}
+  </label>
 </template>
 
 <script lang="ts">
@@ -26,14 +18,12 @@ export default class SetopsTextArea extends Vue {
   }
 
   clicked(event: Event) {
-      this.$emit("input", (event.target as HTMLInputElement).checked);    
+    this.$emit("input", (event.target as HTMLInputElement).checked);
   }
-
 }
 </script>
 
 <style scoped lang="less">
-
 input {
   margin-bottom: -2px;
 }

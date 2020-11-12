@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SetOps />
+    <SetOps />   
   </div>
 </template>
 
